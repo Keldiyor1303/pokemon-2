@@ -1,6 +1,6 @@
 const main = document.querySelector("main")
 const section2 = document.createElement("section")
-section2.className = "section-2 container mt-5"
+section2.className = "section-2 container mt-5 mb-5"
 main.appendChild(section2)
 
 function chiqar(value) {
@@ -14,44 +14,10 @@ function chiqar(value) {
     img.src = pokemons[value]["img"]
     div.appendChild(img)
 
-    const span = document.createElement("span")
-    div.appendChild(span)
-
-    const div2 = document.createElement("div")
-    div2.className = "bottom"
-    div.appendChild(div2)
-
-    const div3 = document.createElement("div")
-    div3.className = "info-1 d-flex justify-content-between align-items-center"
-    div2.appendChild(div3)
-
     const p2 = document.createElement("p")
-    p2.className = "p-1"
+    p2.className = "p-1 text-center mt-4"
     p2.innerText = pokemons[value]["name"]
-    div3.appendChild(p2)
-
-    const img2 = document.createElement("img")
-    img2.src = "./img/Mask.png"
-    div3.appendChild(img2)
-
-    const p1 = document.createElement("p")
-    p1.className = "p-2 text-start"
-    p1.innerText = pokemons[value]["candy"]
-    div2.appendChild(p1)
-
-    const div4 = document.createElement("div")
-    div4.className = "info-2 d-flex align-items-center gap-3"
-    div2.appendChild(div4)
-
-    const p3 = document.createElement("p")
-    p3.className = "p-1"
-    p3.innerText = pokemons[value]["weight"]
-    div4.appendChild(p3)
-
-    const p4 = document.createElement("p")
-    p4.className = "p-1"
-    p4.innerText = pokemons[value]["height"]
-    div4.appendChild(p4)
+    div.appendChild(p2)
 }
 
 for (let i = 0; i < pokemons.length; i++) {
@@ -72,11 +38,10 @@ input.addEventListener("keyup", function () {
         let name = pokemons[i].name.toUpperCase()
         if (name.search(input.value.toUpperCase()) >= 0) chiqar(i)
     }
-    if (input.value.trim() == "") {
-        for (let j = 0; j < pokemons.length; j++) chiqar(j)
-    }
 })
 
+
+// SELECT UCHUN SEARCH
 
 
 // const select = document.querySelector(".form-select")

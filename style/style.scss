@@ -1,13 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap');
 
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color:#FFD845;
-    width: 100%;
-    margin: 0;
+* {
+     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    font-family: 'Roboto', sans-serif;   
+    width: 100%;
+    height: 100%;
+    background: rgb(34,193,195);
+    background: linear-gradient(-45deg, #ee7752, #74656a, #23a6d5, #23d5ab);
+    background-size: 400% 400%;    
+    animation-name: gradient;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 50% 100%;
+    }
+    100% {
+      background-position: 100% 0%;
+    }
+  }
 
 .section-1 {
     img {
@@ -15,75 +37,44 @@ body {
         height: 225px;
     }
 
-    select {
-        width: 260px;
-        border-radius: 15px;
-        border: 2px solid #000000;
-    }
-
     input {
         width: 300px;
-        border-radius: 15px;
-        border: 2px solid #000000;
+        border-radius: 10px;
+        color: #23d5ab;
+        // border: 2px solid #23d5ab;
 
         &::placeholder {
-            color: #000000;
+            color: #23d5ab;
         }
     }
 
-    button {
-        width: 200px;
-        border-radius: 15px;
-        border: 2px solid #000000;
-    }
 }
 
 .section-2 {   
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 423px;
-    gap: 30px;
+    grid-auto-rows: 300px;
+    gap: 25px;
 
     @media (max-width: 560px) {
         display: grid;
         padding: 0 30px;
         grid-template-columns: 1fr;
         grid-auto-rows: 300x;
-        gap: 15px;
     }
 
 
     #div-1 {
         padding-top: 60px;
-        // Width: 307px;
-        // Height: 423px;
-        background: #FFFFFF;
-        border: 2px solid #000000;
-        border-radius: 20px;
+        background: #FFF;
+        border-radius: 15px;
         position: relative;
+        transition: 0.3s;
 
-        span {
-            position: absolute;
-            bottom: 166px;
-            display: block;
-            height: 2px;
-            width: 100%;
-            background-color: black;
-            
+        &:hover {
+            transform: translateY(-20px);
+           box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
         }
-
-        .bottom {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 166px;
-            padding: 15px;
-            
-            img {
-            margin-top: -10px;
-        }
-        }
-
 
         .hayvon {
             position: absolute;
@@ -96,16 +87,7 @@ body {
             font-weight: bold;
             font-size: 24px;
             line-height: 28px;
-            color: #000000;
-        }
-
-        .p-2 {
-            font-weight: 500;
-            font-size: 20px;
-            line-height: 23px;
-            color: #000000;
-            margin-top: -20px;
-            margin-left: -5px;
+            color: #23d5ab;
         }
     } 
 }
