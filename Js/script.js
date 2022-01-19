@@ -18,6 +18,34 @@ function chiqar(value) {
     p2.className = "p-1 text-center mt-4"
     p2.innerText = pokemons[value]["name"]
     div.appendChild(p2)
+
+
+    const aside = document.querySelector("aside")
+    const modal = document.querySelector("#modal")
+
+    div.addEventListener("click", function () {
+        aside.classList.add("aside-open")
+        const modalImg = document.querySelector("#modal img")
+        modalImg.src = pokemons[value]["img"]
+
+        const modalP = document.querySelector("#modal p")
+        modalP.className = "p-1 text-center mt-4"
+        modalP.innerText = pokemons[value]["name"]
+
+    })
+
+    aside.addEventListener("click", function () {
+        aside.classList.remove("aside-open")
+    })
+
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            aside.classList.remove("aside-open")
+        }
+    })
+
+
 }
 
 for (let i = 0; i < pokemons.length; i++) {
@@ -39,6 +67,8 @@ input.addEventListener("keyup", function () {
         if (name.search(input.value.toUpperCase()) >= 0) chiqar(i)
     }
 })
+
+
 
 
 // SELECT UCHUN SEARCH
