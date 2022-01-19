@@ -39,12 +39,16 @@ body {
 
     input {
         width: 300px;
+        height: 40px;
         border-radius: 10px;
-        color: #23d5ab;
-        // border: 2px solid #23d5ab;
+        font-size: 24px;
+        line-height: 28px;
+        color: #23d5ab !important;
 
         &::placeholder {
-            color: #23d5ab;
+            font-size: 24px;
+            line-height: 28px;
+            color: rgba(35, 213, 171, 0.5);
         }
     }
 
